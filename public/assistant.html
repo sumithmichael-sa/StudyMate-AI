@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Assistant | StudyMate AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="assistant-page">
+
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">✦</span>
+            <span>StudyMate AI</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+        </nav>
+
+        <a href="login.html" class="login-link">Sign in</a>
+    </header>
+
+    <main class="chat-layout">
+
+        <section class="chat-heading">
+            <span class="tag">✦ GEMINI-POWERED LEARNING</span>
+            <h1>AI Study Assistant</h1>
+            <p>Ask questions, explore subjects and understand difficult concepts.</p>
+        </section>
+
+        <section class="chat-container">
+
+            <div class="chat-toolbar">
+                <div>
+                    <span class="chat-status"></span>
+                    <strong>StudyMate AI Assistant</strong>
+                    <small>Academic learning support</small>
+                </div>
+                <button id="clearChat" class="clear-button">Clear chat</button>
+            </div>
+
+            <div class="subject-area">
+                <label for="subject">Choose your subject</label>
+                <select id="subject">
+                    <option value="General">General</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Java Programming">Java Programming</option>
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Computer Networks">Computer Networks</option>
+                    <option value="Database Management">Database Management</option>
+                </select>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai-message">
+                    <div class="message-avatar">✦</div>
+                    <div class="message-content">
+                        <strong>StudyMate AI</strong>
+                        <p>Hello! Welcome to your AI Study Assistant. 👋</p>
+                        <p>I'm here to help you understand academic concepts,
+                        solve programming problems and prepare for examinations.</p>
+                        <p>What would you like to learn today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggested-prompts">
+                <button class="prompt-button" data-prompt="Explain cloud computing in simple words.">
+                    📘 Explain a concept
+                </button>
+                <button class="prompt-button" data-prompt="Explain inheritance in Java with an example.">
+                    💻 Programming help
+                </button>
+                <button class="prompt-button" data-prompt="Give me 5 important viva questions about cloud computing.">
+                    🎓 Viva questions
+                </button>
+            </div>
+
+            <form class="chat-input-area" id="chatForm">
+                <textarea
+                    id="userInput"
+                    placeholder="Ask your academic question here..."
+                    rows="2"
+                    required
+                ></textarea>
+
+                <button type="submit" id="sendButton">
+                    Send ➤
+                </button>
+            </form>
+
+            <p class="chat-disclaimer">
+                AI-generated responses may contain errors. Verify important academic information.
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="brand">
+            <span class="brand-icon">✦</span> StudyMate AI
+        </div>
+        <p>AI-Powered Academic Assistance System</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="js/assistant.js"></script>
+</body>
+</html>

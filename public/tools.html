@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Tools | StudyMate AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tools-page {
+            min-height: 100vh;
+            background: #f7f7ff;
+            padding: 45px 18px;
+        }
+
+        .tools-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .tools-heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .tools-heading h1 {
+            color: #292344;
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        .tools-panel, .output-panel {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 5px 22px rgba(30, 25, 70, 0.08);
+            margin-bottom: 22px;
+        }
+
+        .tools-panel label {
+            display: block;
+            font-weight: 600;
+            margin: 15px 0 7px;
+            color: #292344;
+        }
+
+        .tools-panel select,
+        .tools-panel input,
+        .tools-panel textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dcdce8;
+            border-radius: 8px;
+            font: inherit;
+            font-size: 14px;
+        }
+
+        .tools-panel textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .tools-panel select:focus,
+        .tools-panel input:focus,
+        .tools-panel textarea:focus {
+            outline: none;
+            border-color: #7058e9;
+        }
+
+        .tools-btn {
+            margin-top: 20px;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #7058e9;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .tools-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .output-panel {
+            display: none;
+        }
+
+        .output-panel.show {
+            display: block;
+        }
+
+        .output-content {
+            color: #424b60;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .output-content pre {
+            background: #202033;
+            color: #f4f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .output-content code {
+            font-family: Consolas, monospace;
+        }
+
+        .output-content h2,
+        .output-content h3 {
+            color: #292344;
+            margin-top: 20px;
+        }
+
+        .tools-status {
+            margin-top: 14px;
+            color: #625a82;
+            font-size: 14px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #7058e9;
+        }
+
+        @media(max-width: 600px) {
+            .tools-panel, .output-panel {
+                padding: 18px;
+            }
+
+            .tools-heading h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">✦</span>
+            <span>StudyMate AI</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+        </nav>
+
+        <a href="login.html" class="login-link">Sign in</a>
+    </header>
+
+    <main class="tools-page">
+        <div class="tools-container">
+
+            <div class="tools-heading">
+                <span class="tag">✦ GEMINI-POWERED LEARNING</span>
+                <h1 id="toolTitle">AI Learning Tool</h1>
+                <p id="toolDescription">
+                    Get personalised academic assistance with StudyMate AI.
+                </p>
+                <a class="back-link" href="index.html">← Back to Home</a>
+            </div>
+
+            <section class="tools-panel">
+                <h2 id="formHeading">Enter Your Details</h2>
+
+                <label for="subject">Select Subject</label>
+                <select id="subject">
+                    <option>Computer Science</option>
+                    <option>Java Programming</option>
+                    <option>Cloud Computing</option>
+                    <option>Data Structures</option>
+                    <option>Computer Networks</option>
+                    <option>Database Management</option>
+                    <option>Mathematics</option>
+                    <option>General</option>
+                </select>
+
+                <label for="topic">Enter Topic</label>
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="Example: Java Inheritance"
+                    maxlength="200"
+                    required
+                >
+
+                <label for="details" id="detailsLabel">
+                    Additional Instructions
+                </label>
+                <textarea
+                    id="details"
+                    placeholder="Enter your question or instructions here..."
+                    maxlength="4000"
+                ></textarea>
+
+                <button class="tools-btn" id="generateBtn" type="button">
+                    Generate with AI
+                </button>
+
+                <p class="tools-status" id="status" role="status"></p>
+            </section>
+
+            <section class="output-panel" id="outputPanel">
+                <h2>AI Generated Result</h2>
+                <div class="output-content" id="outputContent"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="brand">
+            <span class="brand-icon">✦</span> StudyMate AI
+        </div>
+        <p>AI-Powered Academic Assistance System</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="js/tools.js"></script>
+</body>
+</html>
